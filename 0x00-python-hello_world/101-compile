@@ -1,2 +1,14 @@
 #!/bin/bash
-python3 -m py_compile $PYFILE
+if [ -z "$PYFILE" ]; then
+  echo "Error: PYFILE environment variable not set."
+  exit 1
+fi
+
+if [ ! -e "$PYFILE" ]; then
+  echo "Error: File '$PYFILE' does not exist."
+  exit 1
+fi
+
+python3 -m compileall -b "$PYFILE"
+
+filename_no_ext="${PYFILE%.*}"
