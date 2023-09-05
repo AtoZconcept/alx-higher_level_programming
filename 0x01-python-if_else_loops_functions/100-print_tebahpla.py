@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-for a in range(ord('z'), ord('A') - 1):
-    c = chr(a)
-    case = 'lower' if a % 2 == 0 else 'upper'
-    print("{}".format(c), end='') if case == 'lower' else print("{}".format(c.upper()), end='')
+uppercase = False
+for i in range(ord('z'), ord('A') -1, -1):
+    if uppercase:
+        print("{:c}".format(i).upper(), end="")
+    else:
+        print("{:c}".format(i), end="")
+    uppercase = not uppercase
