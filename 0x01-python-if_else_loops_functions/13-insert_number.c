@@ -1,29 +1,51 @@
 #include "lists.h"
-#include <stdlib.h>
+
+/**
+ * insert_node - Inserts node
+ * @head: Head of the linked list
+ * @number: number to be added to the list
+ * Return: Pointer to a node or null if it fails
+ */
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new = malloc(sizeof(listint_t));
-	listint_t *tmp = *head;
+	listint_t *current = *head;
+	listint_t *new_node = NULL;
+	listint_t *temp = NULL;
 
-	if (new == NULL)
+	(void)number;
+
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	new->n = number;
-
-	if (tmp == NULL || tmp->n >= number)
+	if (head == NULL || *head == NULL)
 	{
-		new->next = tmp;
-		*head = new;
-		return (new);
+		new_node->n = number;
+		new_node->next = NULL;
+		*head = new_node;
+		return (new_node);
 	}
 
-	while (tmp->next != NULL && tmp->next->n < number)
+	if (current->n > number)
 	{
-		tmp = tmp->next;
+		new_node->n = number;
+		new_node->next = current;
+		*head = new_node;
+		return (*head);
 	}
-	new->next = tmp->next;
-	tmp->next = new;
 
-	return (new);
+	/* Traverse the list to find where current->n > number*/
+	while (current->n < number && current->next != NULL)
+	{
+		if (current->next->n >= number)
+			break;
+		current = current->next;
+	}
+	new_node->n = number;
+	temp = current->next;
+	current->next = new_node;
+	new_node->next = temp;
+
+	return (NULL);
 }
