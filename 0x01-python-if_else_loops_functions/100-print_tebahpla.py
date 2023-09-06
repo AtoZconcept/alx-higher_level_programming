@@ -1,8 +1,13 @@
 #!/usr/bin/python3
-uppercase = False
-for i in range(ord('z'), ord('A') -1, -1):
-    if uppercase:
-        print("{:c}".format(i).upper(), end="")
+
+val = 0
+b = 90
+
+for num in range(1, 27):
+    if num % 2 == 0:
+        val = b
     else:
-        print("{:c}".format(i), end="")
-    uppercase = not uppercase
+        val = 123 - num
+
+    b -= 1
+    print("{}".format(chr(val)), end="")
