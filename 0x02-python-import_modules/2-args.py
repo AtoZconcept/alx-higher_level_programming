@@ -7,5 +7,10 @@ if __name__ == "__main__":
 
     if count == 1:
         print("{} argument:".format(count))
+    elif count == 0:
+        print("{} arguments.".format(count))
     else:
-        print("{} arguments".format(count))
+        print("{} arguments:".format(count))
+
+    for i, arg in enumerate(list, start=1):
+        print("{}: {}".format(i, arg))
