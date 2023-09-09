@@ -1,26 +1,26 @@
 #!/usr/bin/python
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    l1 = len(tuple_a)
-    l2 = len(tuple_b)
+    len1 = len(tuple_a)
+    len2 = len(tuple_b)
 
-    if l1 > 1:
-        n1, n2, *lest = tuple_a
-    if l2 > 1:
-        nm1, nm2, *lest = tuple_b
-    if l1 == 1:
-        n1 = tuple_a[0]
-        n2 = 0
-    if l2 == 1:
-        nm1 = tuple_b[0]
-        nm2 = 0
-    if l1 == 0:
-        n1 = 0
-    if l1 == 0:
-        n1 = 0
-        n2 = 0
-    if l2 == 0:
-        nm2 = 0
-        nm1 = 0
-    new = (n1 + nm1, n2 + nm2)
+    if len1 > 1:
+        num1, num2, *lest = tuple_a
+    if len2 > 1:
+        numm1, numm2, *lest = tuple_b
+    if len1 == 1:
+        num1 = tuple_a[0]
+        num2 = 0
+    if len2 == 1:
+        numm1 = tuple_b[0]
+        numm2 = 0
+    if len1 == 0:
+        num1 = 0
+    if len1 == 0:
+        num1 = 0
+        num2 = 0
+    if len2 == 0:
+        numm2 = 0
+        numm1 = 0
+    new = (num1 + numm1, num2 + numm2)
     return new
