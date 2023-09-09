@@ -20,7 +20,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         n1 = 0
         n2 = 0
     if l2 == 0:
-        nm1 = 0
         nm2 = 0
+        nm1 = 0
     new = (n1 + nm1, n2 + nm2)
     return new
