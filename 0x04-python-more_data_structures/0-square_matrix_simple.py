@@ -1,10 +1,7 @@
 #!/usr/bin/puthon3
 
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
+    new_mat = []
     for row in matrix:
-        new_row = []
-        for element in row:
-            new_row.append(element ** 2)
-            new_matrix.append(new_row)
-    return new_matrix
+        new_mat.append([x ** 2 for x in row])
+    return new_mat
