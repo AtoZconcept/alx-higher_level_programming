@@ -8,4 +8,4 @@ def multiply_by_2(a_dictionary):
 
     for i in sorted(a_dictionary.keys()):
         value = a_dictionary[i]
-        print("{}: {}".format(i, value))
+        print("{}: {:d}".format(i, value))
