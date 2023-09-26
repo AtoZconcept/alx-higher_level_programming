@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+This is a docstring the 0-sguare
+
+"""
+
 class Square:
     """My square function
 
