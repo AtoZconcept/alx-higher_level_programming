@@ -13,7 +13,7 @@ class Square:
         """
         This initialising of self size to 0
         """
-        self.__size = size
+        self.size = size
         self.position = position
 
     @property
