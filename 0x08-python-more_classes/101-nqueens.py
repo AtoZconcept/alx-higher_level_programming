@@ -55,7 +55,8 @@ def print_solution(board):
     sol.append(result)
 
     for r in sorted(sol):
-        print (r)
+        print(r)
+
 
 def nqueens(N):
     if not N.isdigit():
