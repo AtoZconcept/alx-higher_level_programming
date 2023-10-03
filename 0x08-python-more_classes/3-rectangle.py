@@ -7,9 +7,9 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Innitializing my rectangle """
-
-        self.height = height
+        
         self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -48,7 +48,7 @@ class Rectangle:
     def area(self):
         """ Calculate area of rectangle """
 
-        return int(self.__width) * int(self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         """ Calculate perimeter """
@@ -56,17 +56,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
-            return (2 * (int(self.__width) + int(self.__height)))
+            return (self.__width + self.__height) * 2
 
     def __str__(self):
         """ str returns """
 
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle_str = ""
-        for _ in range(self.__height):
-            rectangle_str += "#" * self.__width + "\n"
-        return rectangle_str[:-1]
-
-    def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        else:
+            return ("#" * self.__width + "\n") * self.__height
