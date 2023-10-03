@@ -5,4 +5,5 @@ class LockedClass:
         if attr == 'first_name':
             self.__dict__[attr] = value
         else:
-            raise AttributeError("'LockedClass' object has no attribute '{}'".format(attr))
+            mes = "'LockedClass' object has no attribute"
+            raise AttributeError("{} '{}'".format(mes, attr))
