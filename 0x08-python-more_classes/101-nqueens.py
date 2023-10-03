@@ -42,19 +42,20 @@ def solve_nqueens(board, col):
 
 
 def print_solution(board):
+    sol = []
     N = len(board)
-    solution = []
+    result = []
     for i in range(N):
-        row = ""
+        row = []
         for j in range(N):
             if board[i][j] == 1:
-                row += "Q"
-            else:
-                row += "."
-        solution.append(row)
-    print("\n".join(solution))
-    print()
+                row.append(i)
+                row.append(j)
+        result.append(row)
+    sol.append(result)
 
+    for r in sorted(sol):
+        print (r)
 
 def nqueens(N):
     if not N.isdigit():
