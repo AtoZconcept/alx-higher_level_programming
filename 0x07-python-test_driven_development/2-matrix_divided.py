@@ -5,7 +5,7 @@
 def matrix_divided(matrix, div):
     """ Function for dividing matrix """
 
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, (int, float)) or not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     row_size = len(matrix[0])
