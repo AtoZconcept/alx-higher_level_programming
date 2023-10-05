@@ -6,10 +6,12 @@ def text_indentation(text):
     """ Function that prints a text with 2 new lines """    
     if not isinstance(text, str):
         raise TypeError('text must be a string')
-    else:
-        text = text.strip()
-        for char in text:
-            print(char, end="")
-            if char in '.?:':
-                print('\n\n', end="")
-        print()
+
+    text = text.strip()
+    for i in range(len(text)):
+        if text[i] == '.' or text[i] == '?' or text[i] == ':':
+            print(text[i])
+            print()
+        else:
+            if text[i] != ' ' or (i > 0 and text[i-1] not in ('.', '?', ':')):
+                print(text[i], end="")
