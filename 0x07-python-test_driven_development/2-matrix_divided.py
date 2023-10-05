@@ -8,16 +8,19 @@ def matrix_divided(matrix, div):
     is_valid_matrix = (
             isinstance(matrix, list) and
             all(
-                isinstance(row, list)and all(isinstance(num, (int, float)) for num in row)
+                isinstance(row, list) and
+                all(isinstance(num, (int, float)) for num in row)
                 for row in matrix
                 )
             ) or (
-                    isinstance(matrix, list) 
+                    isinstance(matrix, list)
                     and not all(isinstance(row, list) for row in matrix)
                     )
 
     if not is_valid_matrix:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats"
+                )
 
     row_size = len(matrix[0])
     if not all(len(row) == row_size for row in matrix):
