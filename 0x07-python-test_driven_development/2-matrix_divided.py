@@ -5,7 +5,17 @@
 def matrix_divided(matrix, div):
     """ Function for dividing matrix """
 
-    is_valid_matrix = isinstance(matrix, list) and all(isinstance(row, list) and all(isinstance(num, (int, float)) for num in row) for row in matrix) or isinstance(matrix, list) and not all(isinstance(row, list) for row in matrix)
+    is_valid_matrix = (
+            isinstance(matrix, list) and
+            all(
+                isinstance(row, list)and all(isinstance(num, (int, float)) for num in row)
+                for row in matrix
+                )
+            ) or (
+                    isinstance(matrix, list) 
+                    and not all(isinstance(row, list) for row in matrix)
+                    )
+
     if not is_valid_matrix:
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
