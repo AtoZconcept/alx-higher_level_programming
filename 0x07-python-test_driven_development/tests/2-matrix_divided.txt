@@ -1,6 +1,6 @@
-============================
- How to Use 0-add_integer.py
-============================
+===========================
+ How to 2-matrix_divided.py
+===========================
 
 This library is very simple, since it only has one function called
 ``add_integer(a, b=98)``.
@@ -13,13 +13,13 @@ that value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> from 0-add_integer import add_integer(a, b=98)
-    >>> madd_integer(2, 3)
+    >>> from 2-matrix_divided.py import matrix_divided(matrix, div)
+    >>> my_function(2, 3)
     6
 
 It also works with floating-point values.
 
 ::
 
-    >>> add_integer(2.0, 3)
+    >>> my_function(2.0, 3)
     6.0
