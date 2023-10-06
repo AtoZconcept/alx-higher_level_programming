@@ -2,24 +2,14 @@
  How to 2-matrix_divided.py
 ===========================
 
-This library is very simple, since it only has one function called
-``add_integer(a, b=98)``.
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Numbers
-=======
+*** regular test ***
+>>> matrix_divided([[3]], 3)
+[[1.0]]
 
-``add_integer(a, b=98)`` returns the product of its arguments.  For numbers,
-that value is equivalent to using the ``+`` operator.
-
-::
-
-    >>> from 2-matrix_divided.py import matrix_divided(matrix, div)
-    >>> my_function(2, 3)
-    6
-
-It also works with floating-point values.
-
-::
-
-    >>> my_function(2.0, 3)
-    6.0
+*** list of integer ***
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+[[1.0, 3.0], [2.0, 3.0]]
