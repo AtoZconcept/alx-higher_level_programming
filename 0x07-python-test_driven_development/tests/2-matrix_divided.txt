@@ -13,3 +13,49 @@
 >>> div = 3
 >>> matrix_divided(matrix, div)
 [[1.0, 3.0], [2.0, 3.0]]
+
+*** list of integer with div string ***
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = 'one'
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+*** list of integer, div is zero ***
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+*** not list of list of integer ***
+>>> matrix = [[3, 9], ['two', 9]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+*** list of integer but not rectangular ***
+>>> matrix = [[3, 9], [6, 3, 9]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+*** list of integer ***
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = float('inf')
+>>> matrix_divided(matrix, div)
+[[0.0, 0.0], [0.0, 0.0]]
+
+*** list of integer ***
+>>> matrix = [[3, float('nan')], [6, 9]]
+>>> div = 4
+>>> matrix_divided(matrix, div)
+[[0.75, nan], [1.5, 2.25]]
+
+*** list of integer ***
+>>> matrix = [[3, float('nan')], [6, 9]]
+>>> div = float('inf')
+>>> matrix_divided(matrix, div)
+[[0.0, nan], [0.0, 0.0]]
