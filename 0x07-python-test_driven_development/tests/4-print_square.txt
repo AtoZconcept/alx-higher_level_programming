@@ -1,25 +1,25 @@
-============================
- How to Use 0-add_integer.py
-============================
+=============================
+ How to Use 4-print_square.py
+=============================
 
-This library is very simple, since it only has one function called
-``add_integer(a, b=98)``.
+>>> print_square = __import__('4-print_square').print_square
 
-Numbers
-=======
+*** regular tset ***
+>>> print_square(2)
+##
+##
 
-``add_integer(a, b=98)`` returns the product of its arguments.  For numbers,
-that value is equivalent to using the ``+`` operator.
+*** regular tset ***
+>>> print_square("2")
+Traceback (most recent call last):
+TypeError: size must be an integer
 
-::
+*** regular tset ***
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
 
-    >>> from 0-add_integer import add_integer(a, b=98)
-    >>> my_function(2, 3)
-    6
-
-It also works with floating-point values.
-
-::
-
-    >>> my_function(2.0, 3)
-    6.0
+*** regular tset ***
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
