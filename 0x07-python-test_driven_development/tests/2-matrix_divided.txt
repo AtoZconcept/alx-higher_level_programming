@@ -61,11 +61,15 @@ TypeError: Each row of the matrix must have the same size
 [[0.0, nan], [0.0, 0.0]]
 
 *** list of integer ***
->>> matrix_divided(matrix, div)
-[[0.0, nan], [0.0, 0.0]]
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = 3
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 *** list of integer ***
->>> matrix = [[3], [6, 3, 9]]
->>> matrix_divided(matrix, div)
+>>> matrix = [[3, 9], [6, 9]]
+>>> div = 3
+>>> matrix_divided()
 Traceback (most recent call last):
-TypeError: Each row of the matrix must have the same size
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
