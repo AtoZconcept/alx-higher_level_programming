@@ -1,25 +1,24 @@
 ============================
- How to Use 0-add_integer.py
+ How to Use 3-say_my_name.py
 ============================
 
-This library is very simple, since it only has one function called
-``add_integer(a, b=98)``.
+>>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Numbers
-=======
+*** regular test ***
+>>> say_my_name("Afeez", "Lasisi")
+My name is Afeez Lasisi
 
-``add_integer(a, b=98)`` returns the product of its arguments.  For numbers,
-that value is equivalent to using the ``+`` operator.
+*** regular test ***
+>>> say_my_name("Afeez", 11)
+Traceback (most recent call last):
+TypeError: last_name must be a string
 
-::
+*** regular test ***
+>>> say_my_name(34, "Afeez")
+Traceback (most recent call last):
+TypeError: first_name must be a string
 
-    >>> from 0-add_integer import add_integer(a, b=98)
-    >>> my_function(2, 3)
-    6
-
-It also works with floating-point values.
-
-::
-
-    >>> my_function(2.0, 3)
-    6.0
+*** regular test ***
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
