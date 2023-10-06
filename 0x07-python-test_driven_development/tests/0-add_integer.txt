@@ -8,18 +8,31 @@ This library is very simple, since it only has one function called
 Numbers
 =======
 
-``add_integer(a, b=98)`` returns the product of its arguments.  For numbers,
+``add_integer(a, b=98)`` returns the addition of its arguments.  For numbers,
 that value is equivalent to using the ``+`` operator.
 
-::
+>>> add_integer = __import__('0-add_integer').add_integer
 
-    >>> from 0-add_integer import add_integer(a, b=98)
-    >>> madd_integer(2, 3)
-    6
+*** add two int ***
+>>> add_integer(2, 3)
+5
+>>> add_integer(-2, 5)
+3
 
-It also works with floating-point values.
+*** negative ints***
+>>> add_integer(-2, -5)
+-7
 
-::
+*** It also works with floating-point ***
+>>> add_integer(2.0, 3)
+5
 
-    >>> add_integer(2.0, 3)
-    6.0
+*** a must be integer ***
+>>> add_integer("Afeez", 45)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+*** b must be integer ***
+>>> add_integer(102, "Lasisi")
+Traceback (most recent call last):
+TypeError: b must be an integer
