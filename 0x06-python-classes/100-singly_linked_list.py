@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+""" This code print Nodes """
+
 
 class Node:
+    """ Node class to be innitiate """
+
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -28,6 +32,8 @@ class Node:
             self.__next_node = value
 
 class SinglyLinkedList:
+    """ Singling link list to be initiata """
+
     def __init__(self):
         self.head = None
 
