@@ -4,15 +4,13 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ this define each line containing a specific string """
-
-    try:
-        with open(filename, mode='r', encoding='utf-8') as file:
-            lines = file.readlines()
-
-        with open(filename, mode='w', encoding='utf-8') as file:
-            for line in lines:
-                file.write(line)
-                if search_string in line:
-                    file.write(new_string)
-    except FileNotFoundError:
-        pass
+    
+    with open(filename, "r+") as f:
+        lines = f.readlines()
+        new_lines = []
+        for line in lines:
+            new_lines.append(line)
+            if search_string in line:
+                new_lines.append(new_string)
+        f.seek(0)
+        f.writelines(new_lines)
