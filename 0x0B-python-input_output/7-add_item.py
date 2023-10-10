@@ -19,6 +19,7 @@ def add_argument(args):
 
     save_to_json_file(existing_list, "add_item.json")
 
+
 if __name__ == "__main__":
     arguments = sys.argv[1:]
 
