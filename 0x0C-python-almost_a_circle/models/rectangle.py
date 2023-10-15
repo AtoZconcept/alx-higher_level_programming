@@ -101,3 +101,13 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+
+        att = self.__dict__
+        serial = {}
+
+        for key, value in att.items():
+            if isinstance(value, (int, str, bool, list, dict)):
+                serial[key] = value
+        return serial
