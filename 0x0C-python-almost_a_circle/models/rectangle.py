@@ -24,6 +24,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ setter for width """
+
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -56,6 +57,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ setter for x """
+
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -71,6 +73,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ setter for y """
+
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -83,12 +86,16 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """ to print width and height """
+
         for _ in range(self.__y):
             print()
         for i in range(self.__height):
             print(' ' * self.__x + "#" * self.__width)
 
     def __str__(self):
+        """ defining str for returning """
+
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
