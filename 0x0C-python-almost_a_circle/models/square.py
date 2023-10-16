@@ -42,10 +42,9 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ this check for class attribute """
 
-        att = self.__dict__
-        serial = {}
-
-        for key, value in att.items():
-            if isinstance(value, (int, str, bool, dict, list)):
-                serial[key] = value
-        return serial
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }

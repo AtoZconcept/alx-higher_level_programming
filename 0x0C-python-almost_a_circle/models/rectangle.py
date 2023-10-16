@@ -113,10 +113,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ return dict to instances """
 
-        att = self.__dict__
-        serial = {}
-
-        for key, value in att.items():
-            if isinstance(value, (int, str, bool, list, dict)):
-                serial[key] = value
-        return serial
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
