@@ -9,6 +9,6 @@ header
 import requests
 import sys
 if __name__ == "__main__":
-    r = requests.get(sys.argv[1], auth=('user', 'pass'))
-    body = r.headers.get['X-Request-Id']
+    r = requests.get(sys.argv[1])
+    body = r.headers.get('X-Request-Id')
     print(body)
